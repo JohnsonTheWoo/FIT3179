@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Vega-Lite version of bar chart from https://observablehq.com/@d3/learn-d3-scales.",
+    "width": 550,
+    "height": 300,
+    "title": {
+      "text": "Top 5 and Bottom 5 countries Life expectancy",
+      "fontSize": 20,
+      "offset": 25
+    },
+    "config": {
+      "background":"#fafafa",
+      "view": {"stroke": "transparent"},
+      "axis": {
+        "grid": false
+      },
+      "axisY": {"titleFontSize": 30}
+    },
+    "data": {
+      "values": [
+        {"name": "Japan", "value": 84.2},
+        {"name": "Liechtenstein", "value": 83.0},
+        {"name": "Italy", "value": 82.9},
+        {"name": "Israel", "value": 82.8},
+        {"name": "Australia", "value": 82.7},
+        {"name": "Guyinea-Bissau", "value": 58.0},
+        {"name": "Ivory Coast", "value": 57.4},
+        {"name": "Chad", "value": 54.0},
+        {"name": "Lesotho", "value": 53.7},
+        {"name": "Central African", "value": 52.8}
+
+        
+      ]
+    },
+    
+    "encoding": {
+      "y": {"field": "name", "type": "nominal", "sort": "-x", "title": null},
+      "x": {"field": "value", "type": "quantitative", "title": null, "axis": null}
+    },
+    "layer": [{
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "title": "Life Expectancy",
+          "scale": {
+            "type": "ordinal",
+            "range": ["skyblue","#FB928E"]
+          },
+          "legend": null 
+        },
+        "tooltip": [
+            {"field": "Country", "type": "nominal", "title":"Country"},
+            {"field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy"}
+        ]
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "xOffset": -15,
+        "aria": false
+      },
+      "encoding": {
+        "text": {"field": "value", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "test": {"field": "value", "gt": 60},
+            "value": "White"
+          },
+          "value": "black"
+        }
+      }
+    }]
+}
