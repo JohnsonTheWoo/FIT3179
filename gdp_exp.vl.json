@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/world_2023_cleaned.csv"
+    },
+    "width": 400,
+    "height": 350,
+    "config": {
+      "background": "#fafafa",
+      "view": {"stroke": "transparent"},
+      "axis": {"grid": false},
+      "axisX": {"titleFontSize": 13}, 
+      "axisY": {"titleFontSize": 13},
+      "legend": {
+        "titleFontSize": 13, 
+        "labelFontSize": 13
+      }
+    },
+    "title": {
+      "text": "Life Expectancy VS GDP",
+      "fontSize": 20,
+      "offset": 25
+    },
+    "mark": "circle",
+    "encoding": {
+    "y": {
+      "field": "Life expectancy",
+      "type": "quantitative",
+      "scale": {"zero": false},  
+      "title": "Life expectancy",
+      "scale": {
+        "domain": [0, 100]  
+      }
+    },
+    "x": {
+      "field": "GDP",
+      "type": "quantitative",
+      "title": "GDP",
+      "scale": {
+        "domain": [0,323802808108]
+      }
+    },
+    "tooltip": [
+      {"field": "Country Name", "type": "nominal", "title": "Country"},
+      {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
+      {"field": "GDP", "type": "quantitative", "title": "GDP"}
+    ]
+  }
+  }
+  

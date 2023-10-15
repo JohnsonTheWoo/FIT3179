@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Correlation Matrix",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/world_2023_cleaned.csv"
+    },
+    "transform": [
+      {"calculate": "datum.Country", "as": "Identifier"},
+      {"calculate": "datum.Density", "as": "Density"},
+      {"calculate": "datum['Birth Rate']", "as": "BirthRate"},
+      {"calculate": "datum['Co2-Emissions']", "as": "Co2Emissions"},
+      {"calculate": "datum.CPI", "as": "CPI"},
+      {"calculate": "datum['Fertility Rate']", "as": "FertilityRate"},
+      {"calculate": "datum.GDP", "as": "GDP"},
+      {"calculate": "datum['Gross tertiary education']", "as": "GrossTertiaryEducation"},
+      {"calculate": "datum['Infant mortality']", "as": "InfantMortality"},
+      {"calculate": "datum['Life expectancy']", "as": "LifeExpectancy"},
+      {"calculate": "datum['Minimum wage']", "as": "MinimumWage"},
+      {"calculate": "datum['Physicians per thousand']", "as": "PhysiciansPerThousand"},
+      {"calculate": "datum.Population", "as": "Population"},
+      {"calculate": "datum['Unemployment rate']", "as": "UnemploymentRate"}
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {"field": "field", "type": "nominal"},
+      "y": {"field": "field", "type": "nominal"},
+      "color": {"field": "value", "type": "quantitative", "scale": {"scheme": "viridis"}}
+    },
+    "config": {
+      "axis": {
+        "labelFontSize": 10
+      }
+    },
+    "width": 500,
+    "height": 500
+  }
+  
