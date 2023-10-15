@@ -42,7 +42,7 @@
                   "lookup": "properties.NAME",
                   "from": {
                       "data": {
-                          "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/world_2023_cleaned.csv"
+                          "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
                       },
                       "key": "Country",
                       "fields": ["Life expectancy"]

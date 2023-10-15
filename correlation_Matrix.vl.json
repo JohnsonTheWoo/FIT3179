@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Correlation Matrix",
     "data": {
-      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/world_2023_cleaned.csv"
+      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
     },
     "transform": [
       {"calculate": "datum.Country", "as": "Identifier"},
