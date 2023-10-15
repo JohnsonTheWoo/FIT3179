@@ -122,4 +122,22 @@
     }
 
 
-    
+    .gdp_exp{
+        float: right;
+        width: 50%;
+        box-sizing: border-box;
+        background-color: #fafafa;
+        padding-top: 10px; 
+        padding-bottom: 30px; 
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: auto;
+    }
+    #gdp_text {
+        font-size: 20px;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        text-align: justify;
+        font-family: 'Tahoma', sans-serif;
+    }
