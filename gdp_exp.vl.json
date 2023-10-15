@@ -3,6 +3,11 @@
     "data": {
       "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
     },
+    "transform": [
+      {"filter": {"field": "Life expectancy", "valid": true, "range": [1, null]}},
+      {"filter": {"field": "GDP", "valid": true, "range": [1, 3.5e12]}},
+      {"calculate": "datum.GDP < 1e12 ? datum.GDP : 1e12", "as": "filtered_GDP"}
+    ],
     "width": 400,
     "height": 350,
     "config": {
@@ -23,28 +28,23 @@
     },
     "mark": "circle",
     "encoding": {
-    "y": {
-      "field": "Life expectancy",
-      "type": "quantitative",
-      "scale": {"zero": false},  
-      "title": "Life expectancy",
-      "scale": {
-        "domain": [0, 100]  
-      }
-    },
-    "x": {
-      "field": "GDP",
-      "type": "quantitative",
-      "title": "GDP",
-      "scale": {
-        "domain": [0,323802808108]
-      }
-    },
-    "tooltip": [
-      {"field": "Country Name", "type": "nominal", "title": "Country"},
-      {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
-      {"field": "GDP", "type": "quantitative", "title": "GDP"}
-    ]
-  }
+      "y": {
+        "field": "Life expectancy",
+        "type": "quantitative",
+        "scale": {"zero": false},  
+        "title": "Life expectancy",
+        "axis": {"domain": [1, 100]}
+      },
+      "x": {
+        "field": "filtered_GDP",
+        "type": "quantitative",
+        "title": "GDP(USD)"
+      },
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
+        {"field": "GDP", "type": "quantitative", "title": "GDP"}
+      ]
+    }
   }
   
