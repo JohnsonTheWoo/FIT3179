@@ -1,0 +1,48 @@
+@media screen and (max-width: 1820px) {
+    body {
+        background-color: #fff6dd;
+        background-color: #494949;   
+    }
+    }
+    
+    .all_page {
+        width: 1300px;
+        margin: auto;
+        background-color: #fafafa;
+        text-align: center;
+        padding-left: 40px;
+        padding-right:40px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+    .title {
+        align-items: center;
+        background-color: #fea5c6;
+        background-size: 160%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+    
+    h1 {
+        font-size: 70px;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #world_map {    left: 65px;
+        top: 70px;
+    }
+    
+    #explain{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 100px;
+        font-family: 'Trebuchet MS', sans-serif;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    
