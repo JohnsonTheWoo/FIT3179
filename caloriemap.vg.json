@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-        "url": "your_data.json", // Replace with your data source URL
+        "url": "your_data.json",
         "format": {"type": "json"}
     },
     "mark": "geoshape",
@@ -10,7 +10,7 @@
         "color": {
             "field": "Average Calorie Intake",
             "type": "quantitative",
-            "scale": {"type": "linear", "domain": [minValue, maxValue], "scheme": "viridis"} // Adjust the domain and color scheme
+            "scale": {"type": "linear", "domain": [minValue, maxValue], "scheme": "viridis"} 
         },
         "tooltip": [
             {"field": "Country", "type": "nominal"},
