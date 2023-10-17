@@ -57,7 +57,7 @@
         position: relative;
         width: 650px;
         height: 380px;
-        /* Remove flex-direction: column; */
+    
     }
     
     #ranking_text {
@@ -66,8 +66,8 @@
         padding-top: 50px;
         text-align: justify;
         font-family: 'Tahoma', sans-serif;
-        /* Add margin-left to create space between text and visualization */
-        margin-left: 20px;
+      
+        margin-left: 40px;
     }
     
 
@@ -145,3 +145,9 @@
         text-align: justify;
         font-family: 'Tahoma', sans-serif;
     }
+
+    .trend{
+        left: 65px;
+        top: 70px;
+    }
+

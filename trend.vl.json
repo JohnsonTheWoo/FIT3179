@@ -1,11 +1,21 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Google's stock price over time.",
-    "data": {"url": ""},
-    "transform": [{"filter": "datum.symbol==='GOOG'"}],
-    "mark": "line",
+    "title": "World Mean Life Expectancy over Time",
+    "data": {"url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/trend.csv"},
+    "mark": {
+      "type": "line",
+      "point": true
+    },
     "encoding": {
-      "x": {"field": "date", "type": "temporal"},
-      "y": {"field": "price", "type": "quantitative"}
+      "x": {"timeUnit":"year", "field": "Year", "type": "ordinal"},
+      "y": {"field": " Life Expectancy from Birth (Years)", "type": "quantitative"},
+
+      "tooltip": [
+                  {"timeUnit":"year", "field": "Year", "type": "ordinal"},
+                  {"field": " Life Expectancy from Birth (Years)", "type": "quantitative", "title": "Life expectancy"}
+              ]
+      
     }
-  }
+    
+  
+}

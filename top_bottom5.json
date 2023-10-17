@@ -51,8 +51,8 @@
           "legend": null 
         },
         "tooltip": [
-            {"field": "Country", "type": "nominal", "title":"Country"},
-            {"field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy"}
+            {"field": "properties.name", "type": "nominal", "title":"Country"},
+            {"field": "properties.value", "type": "quantitative", "title": "Life Expectancy"}
         ]
       }
     }, {
