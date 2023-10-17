@@ -1,60 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Import Vega & Vega-Lite -->
+  <!-- Import Vega & Vega-Lite-->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Import visualizations -->
+
+  <!-- Import  visualisations -->
   <script src="world_map.js"></script>
   <script src="top_bottom5.js"></script>
   <script src="gdp_exp.js"></script>
   <script src="trend.js"></script>
-
+  
+  
   <!-- CSS file -->
   <link rel="stylesheet" href="styles.css">
   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magazine Style Dashboard</title>
 </head>
-<body>
-  <div class="all_page">
-    <div class="title">
-      <h1>Best Country of 2023</h1>
-    </div>
-    <div id="world_map"></div>
-    <div class="explanation">
-      <p>This map shows the average life expectancy in 2023.</p>
-    </div>
 
-    <div class="section">
-      <h2>Best and Worst Countries in Life Expectancy</h2>
-      <hr>
-      <div class="top_bottom5" id="top_bottom5"></div>
-      <div class="ranking_text">
-        <p>Taking a detailed look at the countries with <span class="highlight">highest</span> and <span class="highlight">lowest</span> life expectancy, we can notice some trends. Countries with the highest life expectancy are first-world countries, while countries with the lowest life expectancy are third-world countries often overlooked by the media.</p>
-      </div>
-    </div>
 
-    <div class="section">
-      <h3>Factors Related to Life Expectancy</h3>
-      <hr>
-      <div class="gdp_exp" id="gdp_exp"></div>
-      <div class="gdp_text">
-        <p>There is a limited correlation between GDP and life expectancy. While wealthier nations tend to have longer life expectancies due to better healthcare and living conditions, factors like healthcare access and lifestyle choices also play a significant role. It's a complex interplay of economic, social, and healthcare factors.</p>
-      </div>
-    </div>
+  <body id="background">
+    <div class="all_page">
+        <div class="title" style="padding-top: 0%;">
+            <h1>Best Country of 2023</h1> 
+        </div>
+            <div id="world_map"> </div>
+            <div id="world_map_explanation"> <p class="world_map_explanation">This map shows the average life expectancy of 2023. .</p> </div>
 
-    <div class="section">
-      <h2>Trends</h2>
-      <div class="trend" id="trend"></div>
-    </div>
-  </div>
+        <div id = "heading2"><h2>Best and Worst countries in life expectancy</h2>
+          <hr>
+        </div>     
+        
+        <div>
+            <div class="top_bottom5" id="top_bottom5"></div>
+            <div class="ranking_text" id="ranking_text"><p>Taking a detailed look of the countries with <span style="color: #ff0000">highest</span> and <span style="color: #2600ff">lowest</span> life expectancy, we can notice some trend here. Countries with highest life expectancy are first world countries that everyone are aware of, while countries with lowest life expectancy are third world countries that does not get enough media coverage for anyone to even hear about their name</p></div>
+               
+   
+        </div>
 
-  <footer>
-    <p>- This visualization is created by Seung Woo Jung 32847157 -</p>
-  </footer>
+          <br>
+          <div id ="heading3"> <h3> Factors related with the life expectancy </h3> 
+          <hr>
+          
+        </div>
+        <div>
+          <div class="gdp_exp" id="gdp_exp"></div>
+          <div class="gdp_text" id="gdp_text"><p>As you can see here, there is a limited correlationship between the GDP and Life expectancy. GDP and life expectancy generally show a positive correlation, with wealthier nations often having longer life expectancies due to better healthcare and living conditions. However, many factors beyond GDP, such as healthcare access and lifestyle choices, also influence life expectancy. It's a complex interplay of economic, social, and healthcare factors. </p></div>
+        </div>
+
+        <div>
+          <div class="trend" id="trend"></div>
+          
+        </div>
+        
+   
+        <footer>  <p> - This visualisation is created by Seung Woo Jung 32847157 - </p> </footer>
+       
 </body>
+
+
+
 </html>
