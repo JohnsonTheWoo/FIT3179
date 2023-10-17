@@ -149,5 +149,6 @@
     .trend{
         left: 65px;
         top: 70px;
+        max-width: 1300px;
     }
 
