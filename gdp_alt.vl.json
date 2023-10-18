@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
+    },
+    "transform": [
+      {
+        "filter": {"field": "Life expectancy", "valid": true, "range": [1, null]}
+      },
+      {
+        "filter": {"field": "GDP", "valid": true},
+        "as": "filtered_gdp_data"
+      },
+      {
+        "calculate": "datum.GDP < 1e12 ? datum.GDP : 1e12",
+        "as": "filtered_GDP"
+      }
+    ],
+    "config": {
+      "background": "#fafafa",
+      "view": {"stroke": "transparent"},
+      "axis": {"grid": false},
+      "axisX": {"titleFontSize": 13},
+      "axisY": {"titleFontSize": 13},
+      "legend": {"titleFontSize": 13, "labelFontSize": 13}
+    },
+    "layer": [
+      {
+        "width": 400,
+        "height": 350,
+        "selection": {
+          "graphSelector": {
+            "type": "single",
+            "fields": ["graph"],
+            "bind": {
+              "input": "select",
+              "options": ["Scatter Plot", "Heatmap"],
+              "name": "Graph Selector:"
+            }
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "y": {
+            "field": "Life expectancy",
+            "type": "quantitative",
+            "scale": {"zero": false},
+            "title": "Life expectancy",
+            "axis": {"domain": [1, 100]}
+          },
+          "x": {
+            "field": "filtered_GDP",
+            "type": "quantitative",
+            "title": "GDP(USD)"
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
+            {"field": "GDP", "type": "quantitative", "title": "GDP"}
+          ]
+        },
+        "selection": {
+          "gdpRange": {
+            "type": "interval",
+            "fields": ["filtered_gdp_data.GDP"],
+            "bind": {"input": "range", "min": 0, "max": 3.5e12, "step": 1e10}
+          }
+        }
+      },
+      {
+        "width": 400,
+        "height": 350,
+        "mark": "rect",
+        "encoding": {
+          "x": {"bin": {"maxbins": 60}, "field": "GDP", "type": "quantitative"},
+          "y": {"bin": {"maxbins": 40}, "field": "Life expectancy", "type": "quantitative"},
+          "color": {"aggregate": "count", "type": "quantitative"}
+        }
+      }
+    ]
+  }
+  
