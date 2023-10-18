@@ -1,4 +1,5 @@
-{
+{   
+    "width": 1000,
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "World Mean Life Expectancy over Time",
     "data": {"url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/trend.csv"},
