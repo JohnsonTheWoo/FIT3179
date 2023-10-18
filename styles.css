@@ -47,6 +47,14 @@ body {
     border: none;
     margin: 20px auto;
   }
+
+  #corr_mat {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+   
+  }
+  
   
  
   
@@ -81,6 +89,7 @@ body {
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
+
   
   .explanation,
   .ranking_text,
