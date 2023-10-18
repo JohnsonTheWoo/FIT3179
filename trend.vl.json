@@ -1,22 +1,40 @@
-{   
-    "width": 1000,
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "World Mean Life Expectancy over Time",
-    "data": {"url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/trend.csv"},
-    "mark": {
-      "type": "line",
-      "point": true
+{
+  "width": 1000,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "World Mean Life Expectancy over Time",
+  "data": {"url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/trend.csv"},
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "Year", "type": "ordinal"},
+        "y": {"field": " Life Expectancy from Birth (Years)", "type": "quantitative","scale": {"domain": [40, 80]}},
+        "tooltip": [
+          {"timeUnit": "year", "field": "Year", "type": "ordinal"},
+          {"field": " Life Expectancy from Birth (Years)", "type": "quantitative", "title": "Life expectancy"}
+        ]
+      }
     },
-    "encoding": {
-      "x": {"timeUnit":"year", "field": "Year", "type": "ordinal"},
-      "y": {"field": " Life Expectancy from Birth (Years)", "type": "quantitative"},
-
-      "tooltip": [
-                  {"timeUnit":"year", "field": "Year", "type": "ordinal"},
-                  {"field": " Life Expectancy from Birth (Years)", "type": "quantitative", "title": "Life expectancy"}
-              ]
-      
-    }
+    {
+      "mark": {"type": "rule", "style": "dotted"},
+      "encoding": {
+        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative", "axis": "label"},
+        "strokeDash": {"value": [2, 2]} ,
+        "stroke": {"value" : "red"},
+        "strokeWidth": {"value": 3}
     
-  
+      }
+    },
+      
+    {
+      "mark": {"type": "text", "align": "right", "dx": 210, "dy": -10},
+      "encoding": {
+        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative"},
+        "text": {"value": "As seen here, Life expectancy across the globe is constantly increasing over time"}
+      }
+    }
+  ]
 }
