@@ -1,50 +1,56 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
-    },
-    "transform": [
-      {"filter": {"field": "Life expectancy", "valid": true, "range": [1, null]}},
-      {"filter": {"field": "GDP", "valid": true, "range": [1, 3.5e12]}},
-      {"calculate": "datum.GDP < 1e12 ? datum.GDP : 1e12", "as": "filtered_GDP"}
-    ],
-    "width": 400,
-    "height": 350,
-    "config": {
-      "background": "#fafafa",
-      "view": {"stroke": "transparent"},
-      "axis": {"grid": false},
-      "axisX": {"titleFontSize": 13}, 
-      "axisY": {"titleFontSize": 13},
-      "legend": {
-        "titleFontSize": 13, 
-        "labelFontSize": 13
-      }
-    },
-    "title": {
-      "text": "Life Expectancy VS GDP",
-      "fontSize": 20,
-      "offset": 25
-    },
-    "mark": "circle",
-    "encoding": {
-      "y": {
-        "field": "Life expectancy",
-        "type": "quantitative",
-        "scale": {"zero": false},  
-        "title": "Life expectancy",
-        "axis": {"domain": [1, 100]}
-      },
-      "x": {
-        "field": "filtered_GDP",
-        "type": "quantitative",
-        "title": "GDP(USD)"
-      },
-      "tooltip": [
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
-        {"field": "GDP", "type": "quantitative", "title": "GDP"}
-      ]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JohnsonTheWoo/FIT3179/main/cleaned_data.csv"
+  },
+  "transform": [
+    {"filter": {"field": "Life expectancy", "valid": true, "gt": 0}},
+    {"filter": {"field": "Life expectancy", "valid": true, "gt":0}},
+    {"filter": {"field": "Physicians per thousand", "valid": true, "gt":0}},
+    {"bin": true, "field": "Life expectancy", "as": "Life Expectancy Bin"},
+    {"bin": true, "field": "Physicians per thousand", "as": "Physicians per Thousand Bin"},
+    {"aggregate": [{"op": "count", "as": "Count"}], "groupby": ["Life Expectancy Bin", "Physicians per Thousand Bin"]}
+  ],
+  "width": 400,
+  "height": 350,
+  "config": {
+    "background": "#fafafa",
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false},
+    "axisX": {"titleFontSize": 13}, 
+    "axisY": {"titleFontSize": 13},
+    "legend": {
+      "titleFontSize": 13, 
+      "labelFontSize": 13
     }
+  },
+  "title": {
+    "text": "Life Expectancy VS Physicians per thousand (Binned Heatmap)",
+    "fontSize": 20,
+    "offset": 25
+  },
+  "mark": "rect", 
+  "encoding": {
+    "y": {
+      "field": "Life Expectancy Bin",
+      "type": "ordinal",
+      "title": "Life Expectancy"
+    },
+    "x": {
+      "field": "Physicians per Thousand Bin",
+      "type": "ordinal",
+      "title": "Physicians per Thousand"
+    },
+    "color": {
+      "field": "Count",
+      "type": "quantitative",
+      "title": "Count"
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Life Expectancy Bin", "type": "ordinal", "title": "Life Expectancy"},
+      {"field": "Physicians per Thousand Bin", "type": "ordinal", "title": "Physicians per Thousand"},
+      {"field": "Count", "type": "quantitative", "title": "Count"}
+    ]
   }
-  
+}

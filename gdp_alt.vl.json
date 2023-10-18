@@ -8,13 +8,10 @@
         "filter": {"field": "Life expectancy", "valid": true, "range": [1, null]}
       },
       {
-        "filter": {"field": "GDP", "valid": true},
+        "filter": {"field": "Physicians per thousand", "valid": true},
         "as": "filtered_gdp_data"
-      },
-      {
-        "calculate": "datum.GDP < 1e12 ? datum.GDP : 1e12",
-        "as": "filtered_GDP"
       }
+      
     ],
     "config": {
       "background": "#fafafa",
