@@ -12,7 +12,6 @@
   <script src="top_bottom5.js"></script>
   <script src="gdp_exp.js"></script>
   <script src="trend.js"></script>
-  <script src="correlation.js"></script>
 
   <!-- CSS file -->
   <link rel="stylesheet" href="styles.css">
@@ -23,66 +22,56 @@
 </head>
 
 <body>
-  <div class="all_page">
-    <div class="title">
+  <div class="container">
+    <header>
       <h1>Best Country of 2023</h1>
-    </div>
+    </header>
 
-    <div class="section">
-      <h2>Life Expectancy Around the World</h2>
-      <div class="flex-container">
-        <div id="world_map"></div>
-        <div class="explanation">
-          <p>This map shows the average life expectancy in 2023.</p>
+    <section class="data-section">
+      <div id="world_map"></div>
+      <div class="data-description">
+        <h2>Life Expectancy Around the World</h2>
+        <p>This map shows the average life expectancy in 2023.</p>
+      </div>
+    </section>
+
+    <section class="data-section">
+      <div class="top-bottom-container">
+        <div class="top-bottom-chart" id="top_bottom5"></div>
+        <div class="ranking-text">
+          <h2>Best and Worst Countries in Life Expectancy</h2>
+          <p>Taking a detailed look at the countries with highest and lowest life expectancy, we can notice some trends. Countries with the highest life expectancy are first-world countries, while countries with the lowest life expectancy are third-world countries often overlooked by the media.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Best and Worst Countries in Life Expectancy</h2>
-      <div class="flex-container">
-        <div class="top_bottom5" id="top_bottom5"></div>
-        <div class="ranking_text">
-          <p>Taking a detailed look at the countries with <span style="color:blue">highest</span> and <span style="color:red">lowest</span> life expectancy, we can notice some trends. Countries with the highest life expectancy are first-world countries, while countries with the lowest life expectancy are third-world countries often overlooked by the media.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3>Factors Related to Life Expectancy</h3>
-      <div class="flex-container">
-        <div class="gdp_exp" id="gdp_alt"></div>
-        <div class="gdp_text">
+    <section class="data-section">
+      <div class="gdp-chart-container">
+        <div class="gdp-chart" id="gdp_alt"></div>
+        <div class="gdp-text">
+          <h3>Factors Related to Life Expectancy</h3>
           <p>There is a limited correlation between GDP and life expectancy. While wealthier nations tend to have longer life expectancies due to better healthcare and living conditions, factors like healthcare access and lifestyle choices also play a significant role. It's a complex interplay of economic, social, and healthcare factors.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-
-    <div class="section">
-      <h2>Correlation Matrix</h2>
-      <div class="flex-container">
-        <div id="corr_mat"></div>
-        <div class="explanation">
-          <p>Explanation for the correlation matrix visualization goes here.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
+    <section class="data-section">
+      <div class="trend-chart" id="trend"></div>
       <h2>Global Trend over the year</h2>
-      <div class="trend" id="trend"></div>
-    </div>
+    </section>
 
-    
-    
+    <section class="data-section">
+      <div id="corr_mat"></div>
+      <div class="data-description">
+        <h2>Correlation Matrix</h2>
+        <p>Explanation for the correlation matrix visualization goes here.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>- This visualization is created by Seung Woo Jung 32847157 -</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>- This visualization is created by Seung Woo Jung 32847157 -</p>
-  </footer>
-
-  
 </body>
 
 </html>
