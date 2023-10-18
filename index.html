@@ -12,6 +12,7 @@
   <script src="top_bottom5.js"></script>
   <script src="gdp_exp.js"></script>
   <script src="trend.js"></script>
+  <script src="correlation.js"></script>
 
   <!-- CSS file -->
   <link rel="stylesheet" href="styles.css">
@@ -28,43 +29,51 @@
     </header>
 
     <section class="data-section">
+      <h2>Life Expectancy Around the World</h2>
       <div id="world_map"></div>
       <div class="data-description">
-        <h2>Life Expectancy Around the World</h2>
+        
         <p>This map shows the average life expectancy in 2023.</p>
       </div>
     </section>
 
     <section class="data-section">
-      <div class="top-bottom-container">
-        <div class="top-bottom-chart" id="top_bottom5"></div>
-        <div class="ranking-text">
-          <h2>Best and Worst Countries in Life Expectancy</h2>
+      <div class="centered-container">
+        <h2>Best and Worst Countries in Life Expectancy</h2>
+        <div class="graph" id="top_bottom5"></div>
+        <div class="data-text">
+          
           <p>Taking a detailed look at the countries with highest and lowest life expectancy, we can notice some trends. Countries with the highest life expectancy are first-world countries, while countries with the lowest life expectancy are third-world countries often overlooked by the media.</p>
         </div>
       </div>
     </section>
 
     <section class="data-section">
-      <div class="gdp-chart-container">
-        <div class="gdp-chart" id="gdp_alt"></div>
-        <div class="gdp-text">
-          <h3>Factors Related to Life Expectancy</h3>
+      <div class="centered-container">
+        <h2>Factors Related to Life Expectancy</h2>
+        <div class="graph" id="gdp_alt"></div>
+        <div class="data-text">
+          
           <p>There is a limited correlation between GDP and life expectancy. While wealthier nations tend to have longer life expectancies due to better healthcare and living conditions, factors like healthcare access and lifestyle choices also play a significant role. It's a complex interplay of economic, social, and healthcare factors.</p>
         </div>
       </div>
     </section>
 
     <section class="data-section">
-      <div class="trend-chart" id="trend"></div>
-      <h2>Global Trend over the year</h2>
+      <div class="centered-container">
+        <h2>Global Trend over the year</h2>
+        <div class="graph" id="trend"></div>
+        
+      </div>
     </section>
 
     <section class="data-section">
-      <div id="corr_mat"></div>
-      <div class="data-description">
-        <h2>Correlation Matrix</h2>
-        <p>Explanation for the correlation matrix visualization goes here.</p>
+      <div class="centered-container">
+        <div class="graph" id="corr_mat"></div>
+        <div class="data-text">
+          <h2>Correlation Matrix</h2>
+          <p>Explanation for the correlation matrix visualization goes here.</p>
+        </div>
       </div>
     </section>
 
@@ -75,3 +84,4 @@
 </body>
 
 </html>
+

@@ -26,32 +26,23 @@ header {
 
 .data-section h2 {
   color: #4CAF50;
+  text-align: center;
 }
 
-.data-description {
-  margin-top: 20px;
-}
-
-.top-bottom-container {
+.centered-container {
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: left;
 }
 
-.top-bottom-chart,
-.gdp-chart {
+.graph {
   width: 50%;
 }
 
-.ranking-text,
-.gdp-text {
+.data-text {
   width: 50%;
   padding: 0 20px;
-  text-align: justify;
-}
-
-.trend-chart {
-  width: 100%;
-  margin-bottom: 20px;
 }
 
 footer {
