@@ -11,17 +11,17 @@
       },
       "encoding": {
         "x": {"timeUnit": "year", "field": "Year", "type": "ordinal"},
-        "y": {"field": " Life Expectancy from Birth (Years)", "type": "quantitative","scale": {"domain": [40, 80]}},
+        "y": {"field": " Life Expectancy from Birth (Years)", "type": "quantitative","scale": {"domain": [40, 80]}, "title": "Life expectancy(Years)"},
         "tooltip": [
           {"timeUnit": "year", "field": "Year", "type": "ordinal"},
-          {"field": " Life Expectancy from Birth (Years)", "type": "quantitative", "title": "Life expectancy"}
+          {"field": " Life Expectancy from Birth (Years)", "type": "quantitative", "title": "Life expectancy(Years)"}
         ]
       }
     },
     {
       "mark": {"type": "rule", "style": "dotted"},
       "encoding": {
-        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative", "axis": "label"},
+        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative", "axis":{"labels": false},"title": ""},
         "strokeDash": {"value": [2, 2]} ,
         "stroke": {"value" : "red"},
         "strokeWidth": {"value": 3}
@@ -32,7 +32,7 @@
     {
       "mark": {"type": "text", "align": "right", "dx": 210, "dy": -10},
       "encoding": {
-        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative"},
+        "y": {"aggregate": "max", "field": " Life Expectancy from Birth (Years)", "type": "quantitative","axis":{"labels": false}},
         "text": {"value": "As seen here, Life expectancy across the globe is constantly increasing over time"}
       }
     }
